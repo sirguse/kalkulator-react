@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NumberInput from "./NumberInput"
 import OperatorSelect from "./OperatorSelect"
-
+import "../css/style.css"
 export default function Calculator(){
     const [a, setA] = useState("")
     const [b, setB] = useState("")
@@ -38,8 +38,8 @@ export default function Calculator(){
         if (e.key === "Enter") Obliczenia()
     }
   return(
-    <div onKeyDown={onKeyDown}>
-        <div>
+    <div onKeyDown={onKeyDown} className="container">
+        <div className="container-second">
             <NumberInput label="a" value={a} onChange={setA}></NumberInput>
             <OperatorSelect value={op} onChange={setOp}></OperatorSelect>
             <NumberInput label="b" value={b} onChange={setB}></NumberInput>
